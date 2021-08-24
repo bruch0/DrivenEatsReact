@@ -1,0 +1,228 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #E5E5E5;
+}
+
+button {
+    border: 5px solid transparent;
+    margin: 0px 16px 0px 0px;
+    padding: 0px;
+    width: 144px;
+    text-align: start;
+    box-shadow: 0px 0px 10px -4px #00000040;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+ion-icon {
+    color: #32B72F;
+    font-size: 20px;
+    display: none;
+}
+
+.topbar {
+    height: 92px;
+    width: 100%;
+    background-color: #CF2B2B;
+    color: #FFFFFF;
+    padding: 8px 0 0 21px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-bottom: 92px;
+    z-index: 1;
+    box-shadow: 0px 5px 5px gray;
+}
+
+.title {
+    font-family: 'Righteous';
+    font-size: 44px;
+    line-height: 55px;
+    letter-spacing: -0.012em;
+}
+
+.dishes {
+    margin: 123px 0px 100px 0px;
+    padding-left: 19px;
+    font-family: 'Roboto', sans-serif;;
+}
+
+.dishes > div {
+    margin-bottom: 27px;
+}
+
+.food-title {
+    font-family: 'Righteous';
+    color: #333333;
+    font-size: 26px;
+    line-height: 32px;
+    letter-spacing: 0.018em;
+    margin-bottom: 17px;
+}
+
+.options {
+    display: flex;
+    overflow-x: scroll;
+}
+
+.dish-container {
+    width: 144px;
+    margin: 0px auto;
+}
+
+.dish-container div {
+    margin-top: 9px;
+}
+
+.dish {
+    background-color: #FFFFFF;
+    width: 172px;
+    flex-shrink: 0;
+    margin-right: 16px; 
+    border-radius: 9px;
+}
+
+.dish img {
+    width: 144px;
+    height: 87px;
+    margin: 5px auto 2px auto;
+    border-radius: 4px;
+}
+
+.dish-title {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.description {
+    color: #A6A6A6;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.price {
+    display: flex;
+    font-size: 16px;
+    line-height: 19px;  
+    justify-content: space-between;
+    align-items: center;
+}
+
+.drink .dish-container > div {
+    margin-top: 11px;
+}
+
+.order {
+    width: 100%;
+    height: 92px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.order button {
+    background-color: #CBCBCB;
+    color: #FFFFFF;
+    width: 80%;
+    height: 61px;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.018em;
+    border-radius: 50px;
+    border: 0px;
+}
+
+.confirm-order {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    justify-content: center;
+    font-size: 22px;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+}
+
+.confirm-order button {
+    text-align: center;
+    box-shadow: none;
+    margin: 0px;
+    border: 0px;
+}
+
+.container {
+    width: 90vw;
+    height: 353px;
+    background-color: #50D074;
+    margin: auto auto;
+    border-radius: 9px;
+    box-shadow: 0px 0px 10px 1px #00000040;
+}
+
+.text-container {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+.text-container :first-child {
+    font-size: 5vw;
+}
+
+.confirm-main-dish, .confirm-drink, .confirm-desert, .total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: normal;
+    font-size: 5vw;
+    width: 85%;
+}
+
+.button-confirm {
+    background-color: #FFFFFF;
+    border-radius: 100px;   
+    width: 80%;
+    height: 52px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #50D074;
+    border: 0px;
+}
+
+.button-cancel {
+    background-color: inherit;
+    border: 0px;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+/* Class to make the dish look selected */
+
+.select {
+    border-color: #32B72F;
+}
+
+.select ion-icon {
+    display: initial;
+}

@@ -1,20 +1,23 @@
 export default function DishRow(props) {
-    console.log(props)
+    console.log(props.dishDetais)
     return (
         <div class={props.parentClass}>
             <div class="food-title">
                 {props.title}
             </div>
             <div class="options">
-                {props.dishDetais.forEach(dish => {
-                    <Dish 
-                        dishClass={dish.dishClass}
-                        dishImg={dish.dishImg}
-                        dishAlt={dish.dishAlt}
-                        dishTitle={dish.dishTitle}
-                        dishDescription={dish.dishDescription}
-                        dishPrice={dish.dishPrice}
-                    />
+                {props.dishDetais.map((dish, index) => {
+                    return(
+                        <Dish 
+                            dishClass={dish.dishClass}
+                            dishImg={dish.dishImg}
+                            dishAlt={dish.dishAlt}
+                            dishTitle={dish.dishTitle}
+                            dishDescription={dish.dishDescription}
+                            dishPrice={dish.dishPrice}
+                            key={index}
+                        />
+                    )
                 })}
             </div>
         </div>

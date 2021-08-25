@@ -1,12 +1,12 @@
 export default function DishRow(props) {
-    console.log(props.dishDetais)
+    const { parentClass, title, dishDetais } = props
     return (
-        <div class={props.parentClass}>
+        <div class={parentClass}>
             <div class="food-title">
-                {props.title}
+                {title}
             </div>
             <div class="options">
-                {props.dishDetais.map((dish, index) => {
+                {dishDetais.map((dish, index) => {
                     return(
                         <Dish 
                             dishClass={dish.dishClass}
@@ -25,19 +25,19 @@ export default function DishRow(props) {
 }
 
 function Dish(props) {
-    
+    const { dishClass, dishImg, dishAlt, dishTitle, dishDescription, dishPrice } = props
     return (
-        <button type="button" class={props.dishClass}>
+        <button type="button" class={dishClass}>
             <div class="dish-container">
-                <img src={props.dishImg} alt={props.dishAlt} />
+                <img src={dishImg} alt={dishAlt} />
                 <div class="dish-title">
-                    {props.dishTitle}
+                    {dishTitle}
                 </div>
                 <div class="description">
-                    {props.dishDescription}
+                    {dishDescription}
                 </div>
                 <div class="price">
-                    <div>R$ <span>{props.dishPrice}</span></div>
+                    <div>R$ <span>{dishPrice}</span></div>
                     <ion-icon name="checkmark-circle" />
                 </div>
             </div>

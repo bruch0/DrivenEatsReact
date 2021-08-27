@@ -1,54 +1,24 @@
-import {
-    BrowserRouter as Router,
-    Link
-  } from "react-router-dom";
+import { useState } from "react";
 
-export default function Footer(props) {
+export default function Footer() {
+    let [checks, setChecks] = useState([false, false, false]);
+    let sentence = ['Selecione os 3 itens', 'para fechar o pedido'];
 
-        return(
-            <Router>
-                <div className="order">
-                    <Link to="/revisar">
-                        <button type="button" className="order-button select">
-                            Selecione os 3 itens<br />para fechar o pedido
-                        </button>
-                    </Link>
-                </div>
-            </Router>
+    let check = checks.find(function (e) {
+        if (e !== true) {
+            return true    
+        }
+    })
 
-        )
-}
-
-function revisar(props) {
-    function Confirm(props) {
-        return (
-            <div className={"confirm-" + props.type}>
-                <div className={props.type + '-name'}></div>
-                <div className={props.type + '-price'}></div>
-            </div>
-        )
+    if (check !== false) {
+        sentence = ['Fechar', 'pedido'];
     }
-    
+
     return(
-        <div className="confirm-order">
-            <div className="container">
-                <div className="text-container">
-                    <div>Confirme seu pedido</div>
-
-                    <Confirm type='main-dish' />
-
-                    <Confirm type='drink' />
-
-                    <Confirm type='desert' />
-
-                    <div className="total">
-                        <div>TOTAL</div>
-                        <div className="total-price"></div>
-                    </div>
-                    <button className="button-confirm">Tudo certo, pode pedir!</button>
-                    <button className="button-cancel">cancelar</button>
-                </div>
-            </div>
+        <div className="order">
+            <button type="button" className="order-button">
+                {sentence[0]} <br /> {sentence[1]}
+            </button>
         </div>
     )
 }

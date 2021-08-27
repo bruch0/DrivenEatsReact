@@ -17,13 +17,12 @@ export default function Dish(props) {
         if (value + num === 0) {
             setIsSelected('');
             setRowCheck(checkRow(false, access));
-            <Footer checks={rowCheck}/>
+
         }
         else {
             setValue(value + num);
             setRowCheck(checkRow(true, access));
 
-            <Footer checks={rowCheck}/>
         }
     }
     

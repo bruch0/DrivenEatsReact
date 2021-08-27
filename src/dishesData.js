@@ -34,7 +34,7 @@ export default function DishesData() {
                     dishClass: 'dish main',
                     dishImg: 'assets/main-dish-4.jpeg',
                     dishAlt: "Panqueca de carne",
-                    dishTitle: 'Panqueca de carne',
+                    dishTitle: 'Panqueca',
                     dishDescription: 'Acompanha arroz, feijão e salada.',
                     dishPrice: '21,00'
                 }

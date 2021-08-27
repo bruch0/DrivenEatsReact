@@ -6,7 +6,7 @@ export default function Dishes() {
     let dishes = DishesData();
     
     return (
-        <div class="dishes">
+        <div className="dishes">
             {dishes.map((row, index) => {
               return (
                   <DishRow 

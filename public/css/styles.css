@@ -116,6 +116,36 @@ ion-icon {
     align-items: center;
 }
 
+.dish-qty {
+    display: none;
+}
+
+.dish-qty button {
+    width: 20px;
+    height: 20px;
+    margin: 0px;
+    padding: 0px;
+    background-color: transparent;
+    border: 0px;
+    font-size: 16px;
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dish-qty .minus {
+    color: red;
+}
+
+.dish-qty .plus {
+    color: green;
+}
+
+.dish-qty p {
+    margin: 0px 4px;
+}
+
 .drink .dish-container > div {
     margin-top: 11px;
 }
@@ -225,4 +255,8 @@ ion-icon {
 
 .select ion-icon {
     display: initial;
+}
+
+.select .dish-qty {
+    display: flex !important;
 }

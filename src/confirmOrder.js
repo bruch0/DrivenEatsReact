@@ -1,8 +1,8 @@
 export default function ConfirmOrder() {
     return (
-        <div class="confirm-order">
-            <div class="container">
-                <div class="text-container">
+        <div className="confirm-order">
+            <div className="container">
+                <div className="text-container">
                     <div>Confirme seu pedido</div>
 
                     <Confirm type='main-dish' />
@@ -11,12 +11,12 @@ export default function ConfirmOrder() {
 
                     <Confirm type='desert' />
 
-                    <div class="total">
+                    <div className="total">
                         <div>TOTAL</div>
-                        <div class="total-price"></div>
+                        <div className="total-price"></div>
                     </div>
-                    <button class="button-confirm">Tudo certo, pode pedir!</button>
-                    <button class="button-cancel">cancelar</button>
+                    <button className="button-confirm">Tudo certo, pode pedir!</button>
+                    <button className="button-cancel">cancelar</button>
                 </div>
             </div>
         </div>
@@ -25,9 +25,9 @@ export default function ConfirmOrder() {
 
 function Confirm(props) {
     return (
-        <div class={"confirm-" + props.type}>
-            <div class={props.type + '-name'}></div>
-            <div class={props.type + '-price'}></div>
+        <div className={"confirm-" + props.type}>
+            <div className={props.type + '-name'}></div>
+            <div className={props.type + '-price'}></div>
         </div>
     )
 }

@@ -1,7 +1,7 @@
 export default function Topbar() {
     return (
-        <div class="topbar">
-            <div class="title">
+        <div className="topbar">
+            <div className="title">
                 DrivenEats
             </div>
             <p>

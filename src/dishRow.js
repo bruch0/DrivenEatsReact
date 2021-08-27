@@ -1,11 +1,14 @@
+import React, { useState } from "react";
+import Counter from "./counter";
+
 export default function DishRow(props) {
     const { parentClass, title, dishDetais } = props
     return (
-        <div class={parentClass}>
-            <div class="food-title">
+        <div className={parentClass}>
+            <div className="food-title">
                 {title}
             </div>
-            <div class="options">
+            <div className="options">
                 {dishDetais.map((dish, index) => {
                     return(
                         <Dish 
@@ -25,20 +28,31 @@ export default function DishRow(props) {
 }
 
 function Dish(props) {
-    const { dishClass, dishImg, dishAlt, dishTitle, dishDescription, dishPrice } = props
+    const { dishClass, dishImg, dishAlt, dishTitle, dishDescription, dishPrice } = props;
+    let [isSelected, setIsSelected] = useState('');
+    let [value, setValue] = useState(1);
+
+    function evaluate(num){
+        if (value + num === 0) {
+            setIsSelected('');
+        }
+        else {
+            setValue(value + num);
+        }
+    }
     return (
-        <button type="button" class={dishClass}>
-            <div class="dish-container">
+        <button type="button" className={dishClass + isSelected} onClick={() => setIsSelected(' select')}>
+            <div className="dish-container">
                 <img src={dishImg} alt={dishAlt} />
-                <div class="dish-title">
+                <div className="dish-title">
                     {dishTitle}
                 </div>
-                <div class="description">
+                <div className="description">
                     {dishDescription}
                 </div>
-                <div class="price">
+                <div className="price">
                     <div>R$ <span>{dishPrice}</span></div>
-                    <ion-icon name="checkmark-circle" />
+                    <Counter func={evaluate} value={value}/>
                 </div>
             </div>
         </button>

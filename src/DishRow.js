@@ -1,8 +1,22 @@
 import React, { useState } from "react";
-import Dish from "./dish";
+import Dish from "./Dish";
 
 export default function DishRow(props) {
-    const { parentClass, title, dishDetais, rowCheck, setRowCheck, access } = props;
+    const 
+    { 
+        parentClass,
+        title,
+        dishDetais,
+        rowCheck,
+        setRowCheck,
+        selectedDishes,
+        setSelectedDishes,
+        selectedDishesQty,
+        setSelectedDishesQty,
+        selectedDishesPrice,
+        setSelectedDishesPrice,
+        access
+    } = props;
 
     return (
         <div className={parentClass}>
@@ -21,6 +35,12 @@ export default function DishRow(props) {
                             dishPrice={dish.dishPrice}
                             rowCheck = {rowCheck}
                             setRowCheck = {setRowCheck}
+                            selectedDishes = {selectedDishes}
+                            setSelectedDishes = {setSelectedDishes}
+                            selectedDishesQty = {selectedDishesQty}
+                            setSelectedDishesQty = {setSelectedDishesQty}
+                            selectedDishesPrice = {selectedDishesPrice}
+                            setSelectedDishesPrice = {setSelectedDishesPrice}
                             access = {access}
                             key={index}
                         />

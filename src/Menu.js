@@ -12,7 +12,9 @@ export default function Menu(props) {
     selectedDishesQty,
     setSelectedDishesQty,
     selectedDishesPrice,
-    setSelectedDishesPrice
+    setSelectedDishesPrice,
+    selectedDishesType,
+    setSelectedDishesType,
   } = props;
 
     return (
@@ -31,6 +33,8 @@ export default function Menu(props) {
                   setSelectedDishesQty = {setSelectedDishesQty}
                   selectedDishesPrice = {selectedDishesPrice}
                   setSelectedDishesPrice = {setSelectedDishesPrice}
+                  selectedDishesType={selectedDishesType}
+                  setSelectedDishesType={setSelectedDishesType}
                   access = {index}
                   key = {index}
                 />

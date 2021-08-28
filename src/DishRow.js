@@ -15,6 +15,8 @@ export default function DishRow(props) {
         setSelectedDishesQty,
         selectedDishesPrice,
         setSelectedDishesPrice,
+        selectedDishesType,
+        setSelectedDishesType,
         access
     } = props;
 
@@ -41,6 +43,8 @@ export default function DishRow(props) {
                             setSelectedDishesQty = {setSelectedDishesQty}
                             selectedDishesPrice = {selectedDishesPrice}
                             setSelectedDishesPrice = {setSelectedDishesPrice}
+                            selectedDishesType={selectedDishesType}
+                            setSelectedDishesType={setSelectedDishesType}
                             access = {access}
                             key={index}
                         />

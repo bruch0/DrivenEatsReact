@@ -260,3 +260,11 @@ ion-icon {
 .select .dish-qty {
     display: flex !important;
 }
+
+.order.select button{
+    background-color: green !important;
+}
+
+.disable-link {
+    pointer-events: none;
+}

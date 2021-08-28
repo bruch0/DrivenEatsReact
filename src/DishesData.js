@@ -7,7 +7,7 @@ export default function DishesData() {
             dishDetais: 
             [
                 {
-                    dishClass: 'dish main',
+                    dishClass: 'main',
                     dishImg: 'assets/main-dish-1.jpeg',
                     dishAlt: "Frango à milanesa",
                     dishTitle: 'Frango à milanesa',
@@ -15,7 +15,7 @@ export default function DishesData() {
                     dishPrice: '19,90'
                 },
                 {
-                    dishClass: 'dish main',
+                    dishClass: 'main',
                     dishImg: 'assets/main-dish-2.jpeg',
                     dishAlt: "Peixe frito",
                     dishTitle: 'Peixe frito',
@@ -23,7 +23,7 @@ export default function DishesData() {
                     dishPrice: '23,50'
                 },
                 {
-                    dishClass: 'dish main',
+                    dishClass: 'main',
                     dishImg: 'assets/main-dish-3.jpeg',
                     dishAlt: "Almôndegas",
                     dishTitle: 'Almôndegas',
@@ -31,7 +31,7 @@ export default function DishesData() {
                     dishPrice: '16,90'
                 },
                 {
-                    dishClass: 'dish main',
+                    dishClass: 'main',
                     dishImg: 'assets/main-dish-4.jpeg',
                     dishAlt: "Panqueca de carne",
                     dishTitle: 'Panqueca',
@@ -46,7 +46,7 @@ export default function DishesData() {
             dishDetais: 
             [
                 {
-                    dishClass: 'dish drink',
+                    dishClass: 'drink',
                     dishImg: 'assets/drink-1.png',
                     dishAlt: "Coca lata",
                     dishTitle: 'Coca lata',
@@ -54,7 +54,7 @@ export default function DishesData() {
                     dishPrice: '6,00'
                 },
                 {
-                    dishClass: 'dish drink',
+                    dishClass: 'drink',
                     dishImg: 'assets/drink-2.png',
                     dishAlt: "Coca garrafa",
                     dishTitle: 'Coca garrafa',
@@ -62,7 +62,7 @@ export default function DishesData() {
                     dishPrice: '12,50'
                 },
                 {
-                    dishClass: 'dish drink',
+                    dishClass: 'drink',
                     dishImg: 'assets/drink-3.png',
                     dishAlt: "Água",
                     dishTitle: 'Água',
@@ -70,7 +70,7 @@ export default function DishesData() {
                     dishPrice: '3,00'
                 },
                 {
-                    dishClass: 'dish drink',
+                    dishClass: 'drink',
                     dishImg: 'assets/drink-4.png',
                     dishAlt: "Pureza lata",
                     dishTitle: 'Pureza lata',
@@ -85,7 +85,7 @@ export default function DishesData() {
             dishDetais: 
             [
                 {
-                    dishClass: 'dish desert',
+                    dishClass: 'desert',
                     dishImg: 'assets/desert-1.png',
                     dishAlt: "Pão de mel",
                     dishTitle: 'Pão de mel',
@@ -93,7 +93,7 @@ export default function DishesData() {
                     dishPrice: '4,50'
                 },
                 {
-                    dishClass: 'dish desert',
+                    dishClass: 'desert',
                     dishImg: 'assets/desert-2.png',
                     dishAlt: "Cookies",
                     dishTitle: 'Cookies',
@@ -101,7 +101,7 @@ export default function DishesData() {
                     dishPrice: '5,00'
                 },
                 {
-                    dishClass: 'dish desert',
+                    dishClass: 'desert',
                     dishImg: 'assets/desert-3.png',
                     dishAlt: "Alfajor",
                     dishTitle: 'Alfajor',
@@ -109,7 +109,7 @@ export default function DishesData() {
                     dishPrice: '4,50'
                 },
                 {
-                    dishClass: 'dish desert',
+                    dishClass: 'desert',
                     dishImg: 'assets/desert-4.jpeg',
                     dishAlt: "Bordinhas",
                     dishTitle: 'Bordinhas',

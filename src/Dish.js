@@ -18,41 +18,58 @@ export default function Dish(props) {
         setSelectedDishesQty,
         selectedDishesPrice,
         setSelectedDishesPrice,
+        selectedDishesType,
+        setSelectedDishesType,
         access
     } = props;
-
     let [isSelected, setIsSelected] = useState('');
     let [value, setValue] = useState(1);
 
     function selectDish() {
-        setIsSelected(' select')
-        setSelectedDishes([...selectedDishes, dishTitle]);
-        setSelectedDishesQty([...selectedDishesQty, 1]);
-        setSelectedDishesPrice([...selectedDishesQty, dishPrice])
-        setRowCheck(checkRow(true, access));
+        let contains =  selectedDishes.find(function (e) {
+            if (e === dishTitle) {
+                return true    
+            }
+        })
+        
+        if (contains === undefined) {
+            setIsSelected(' select')
+            setSelectedDishes([...selectedDishes, dishTitle]);
+            setSelectedDishesQty([...selectedDishesQty, 1]);
+            setSelectedDishesPrice([...selectedDishesPrice, dishPrice])
+            setRowCheck(checkRow(true, access));
+            setSelectedDishesType([...selectedDishesType, dishClass])
+        }
     }
-
+    
     function filterDish(unselectedDish) {
+        let indexUnselect = selectedDishes.indexOf(unselectedDish);
+        selectedDishesType.splice(indexUnselect, 1);
+        selectedDishesQty.splice(indexUnselect, 1);
+        selectedDishesPrice.splice(indexUnselect, 1);
         setSelectedDishes(selectedDishes.filter(function(e) {
             if (e !== unselectedDish){
                 return true
             }
         }))
+        setSelectedDishesType(selectedDishesType);
+        setSelectedDishesQty(selectedDishesType);
+        setSelectedDishesPrice(selectedDishesType);
     }
 
     function evaluate(num){
+        let index = selectedDishes.findIndex(dish => dish === dishTitle);
+
         if (value + num === 0) {
+            filterDish(dishTitle);
             setIsSelected('');
             setRowCheck(checkRow(false, access));
-            filterDish(dishTitle);
         }
         else {
+            let auxArrayQty = [...selectedDishesQty];
             setValue(value + num);
-            let index = selectedDishes.findIndex(dish => dish === dishTitle);
-            let auxArray = [...selectedDishesQty];
-            auxArray[index] = value + num;
-            setSelectedDishesQty (auxArray);
-            console.log(selectedDishesQty);
+            auxArrayQty[index] = value + num;
+            setSelectedDishesQty (auxArrayQty);
         }
     }
 
@@ -63,7 +80,7 @@ export default function Dish(props) {
     }
     
     return (
-        <button type="button" className={dishClass + isSelected} onClick={() => selectDish()}>
+        <button type="button" className={'dish ' + dishClass + isSelected} onClick={() => selectDish()}>
             <div className="dish-container">
                 <img src={dishImg} alt={dishAlt} />
                 <div className="dish-title">

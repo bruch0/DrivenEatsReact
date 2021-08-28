@@ -11,6 +11,7 @@ export default function App() {
     let [selectedDishes, setSelectedDishes] = useState([])
     let [selectedDishesQty, setSelectedDishesQty] = useState([])
     let [selectedDishesPrice, setSelectedDishesPrice] = useState([])
+    let [selectedDishesType, setSelectedDishesType] = useState([])
     return (
         <>
             <Topbar />
@@ -24,13 +25,15 @@ export default function App() {
                 setSelectedDishesQty={setSelectedDishesQty}
                 selectedDishesPrice={selectedDishesPrice}
                 setSelectedDishesPrice={setSelectedDishesPrice}
+                selectedDishesType={selectedDishesType}
+                setSelectedDishesType={setSelectedDishesType}
             />
             <Footer 
-                dishesData={dishes}
                 rowCheck={rowCheck}
-                setRowCheck={setRowCheck}
                 selectedDishes={selectedDishes}
-                setSelectedDishes={setSelectedDishes}
+                selectedDishesQty={selectedDishesQty}
+                selectedDishesPrice={selectedDishesPrice}
+                selectedDishesType={selectedDishesType}
             />
         </>
     )

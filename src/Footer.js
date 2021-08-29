@@ -10,16 +10,58 @@ export default function Footer(props) {
         selectedDishesType
     } = props
 
-     function order () {
+    function order () {
         let text = 'https://wa.me/5548984321748?text=';
-        
+
+        function getType(type) {
+            let aux = [];
+            selectedDishesType.forEach((e, index) => {
+                if (e === type) {
+                    aux.push(index);
+                }
+            });
+
+            return aux
+        }
+
+        function buildOrder(type) {
+            let order = '';
+            let qty = '';
+            type.forEach(e => {
+                if (selectedDishesQty[e] !== 1) {
+                    qty = `(${selectedDishesQty[e]}x)`
+                }
+                order += `${selectedDishes[e]} ${qty}\n`;
+            });
+
+            return order
+        }
+
+        function calculateTotalPrice() {
+            let total = 0;
+            selectedDishesPrice.forEach((e, index) => {
+                total += Number(e.replace(',','.')) * selectedDishesQty[index]
+            });
+            
+            return total
+        }
+
+        let arrMain = getType('main');
+        let arrDrink = getType('drink');
+        let arrDesert = getType('desert');
+
+        let mainOrder = buildOrder(arrMain);
+        let drinkOrder = buildOrder(arrDrink);
+        let desertOrder = buildOrder(arrDesert);
+
+        let totalPrice = calculateTotalPrice().toFixed(2).toString();
         
         let userOrder = 
         encodeURIComponent(
-            `Olá, gostaria de fazer o pedido: \n\n- Prato: {mainDish} \n- Bebida: {drink} \n- Sobremesa: {desert} \nTotal: R$ {total.replace('.', ',')}`
+            `*- Pratos:* \n${mainOrder} \n*- Bebidas:* \n${drinkOrder} \n*- Sobremesas:* \n${desertOrder}\n\n *Total*: R$ ${(totalPrice).replace('.', ',')}`
         );
         
-        window.location.replace(text + userOrder)
+        window.location.replace(text + userOrder);
     }
 
     let sentence;
@@ -41,7 +83,7 @@ export default function Footer(props) {
 
     return(
         <div className={'order ' + auxClass}>
-            <button type="button" className="order-button" onClick={() => console.log('a')}>
+            <button type="button" className="order-button" onClick={() => order()}>
                 {sentence[0]} <br /> {sentence[1]}
             </button>
         </div>

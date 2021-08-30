@@ -1,7 +1,7 @@
-import Topbar from './components/Topbar'
-import Menu from './Menu'
-import Footer from './Footer'
-import DishesData  from "./DishesData"
+import Topbar from '../components/Topbar'
+import Menu from '../menu/Menu'
+import Footer from '../components/Footer'
+import DishesData  from "../data/DishesData"
 import React, { useState } from "react";
 
 export default function Body() {

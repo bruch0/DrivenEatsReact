@@ -1,5 +1,5 @@
-import Body from "./body";
-import ConfirmOrder from './Confirm-order'
+import Body from "./pages/Body";
+import ConfirmOrder from './pages/ConfirmOrder'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 export default function App() {

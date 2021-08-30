@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Dish from "./Dish";
 
 export default function DishRow(props) {

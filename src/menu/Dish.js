@@ -30,6 +30,9 @@ export default function Dish(props) {
             if (e === dishTitle) {
                 return true    
             }
+            else {
+                return false
+            }
         })
         
         if (contains === undefined) {
@@ -50,6 +53,9 @@ export default function Dish(props) {
         setSelectedDishes(selectedDishes.filter(function(e) {
             if (e !== unselectedDish){
                 return true
+            }
+            else {
+                return false
             }
         }))
         setSelectedDishesType(selectedDishesType);

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from 'react-router-dom';
 
 export default function Footer(props) {
@@ -17,6 +16,9 @@ export default function Footer(props) {
         if (e !== true) {
             return true    
         }
+        else {
+            return false
+        }
     })
 
     if (check !== false) {
@@ -27,7 +29,6 @@ export default function Footer(props) {
         sentence = ['Selecione os 3 itens', 'para fechar o pedido'];
         auxClass = 'disable-link';
     }
-    console.log(selectedDishesQty, selectedDishesPrice)
     return(
         <Link to={{pathname: "/revisar", state: { selectedDishes: selectedDishes, selectedDishesQty: selectedDishesQty, selectedDishesPrice: selectedDishesPrice, selectedDishesType: selectedDishesType}}}>
             <div className={'order ' + auxClass}>

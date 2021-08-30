@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 
 export default function Footer(props) {
     const 
@@ -9,60 +10,6 @@ export default function Footer(props) {
         selectedDishesPrice,
         selectedDishesType
     } = props
-
-    function order () {
-        let text = 'https://wa.me/5548984321748?text=';
-
-        function getType(type) {
-            let aux = [];
-            selectedDishesType.forEach((e, index) => {
-                if (e === type) {
-                    aux.push(index);
-                }
-            });
-
-            return aux
-        }
-
-        function buildOrder(type) {
-            let order = '';
-            let qty = '';
-            type.forEach(e => {
-                if (selectedDishesQty[e] !== 1) {
-                    qty = `(${selectedDishesQty[e]}x)`
-                }
-                order += `${selectedDishes[e]} ${qty}\n`;
-            });
-
-            return order
-        }
-
-        function calculateTotalPrice() {
-            let total = 0;
-            selectedDishesPrice.forEach((e, index) => {
-                total += Number(e.replace(',','.')) * selectedDishesQty[index]
-            });
-            
-            return total
-        }
-
-        let arrMain = getType('main');
-        let arrDrink = getType('drink');
-        let arrDesert = getType('desert');
-
-        let mainOrder = buildOrder(arrMain);
-        let drinkOrder = buildOrder(arrDrink);
-        let desertOrder = buildOrder(arrDesert);
-
-        let totalPrice = calculateTotalPrice().toFixed(2).toString();
-        
-        let userOrder = 
-        encodeURIComponent(
-            `*- Pratos:* \n${mainOrder} \n*- Bebidas:* \n${drinkOrder} \n*- Sobremesas:* \n${desertOrder}\n\n *Total*: R$ ${(totalPrice).replace('.', ',')}`
-        );
-        
-        window.location.replace(text + userOrder);
-    }
 
     let sentence;
     let auxClass;
@@ -82,11 +29,13 @@ export default function Footer(props) {
     }
 
     return(
-        <div className={'order ' + auxClass}>
-            <button type="button" className="order-button" onClick={() => order()}>
-                {sentence[0]} <br /> {sentence[1]}
-            </button>
-        </div>
+        <Link to={{pathname: "/revisar", state: { selectedDishes: selectedDishes, selectedDishesQty: selectedDishesQty, selectedDishesPrice: selectedDishesPrice, selectedDishesType: selectedDishesType}}}>
+            <div className={'order ' + auxClass}>
+                <button type="button" className="order-button">
+                    {sentence[0]} <br /> {sentence[1]}
+                </button>
+            </div>
+        </Link>
     )
 }
 

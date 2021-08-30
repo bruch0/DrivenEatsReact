@@ -57,6 +57,20 @@ export default function Dish(props) {
         setSelectedDishesPrice(selectedDishesType);
     }
 
+    function checkRow(value ,key) {
+        let newCheck = [...rowCheck];
+        if (value === false) {
+            if (selectedDishesType.indexOf(dishClass) === -1) {
+                let newCheck = [...rowCheck];
+                newCheck[key] = value;
+            }
+        }
+        else {
+            newCheck[key] = value;
+        }
+        return newCheck
+    }
+
     function evaluate(num){
         let index = selectedDishes.findIndex(dish => dish === dishTitle);
 
@@ -73,12 +87,6 @@ export default function Dish(props) {
         }
     }
 
-    function checkRow(value ,key) {
-        let newCheck = [...rowCheck];
-        newCheck[key] = value;
-        return newCheck
-    }
-    
     return (
         <button type="button" className={'dish ' + dishClass + isSelected} onClick={() => selectDish()}>
             <div className="dish-container">

@@ -1,40 +1,14 @@
-import Topbar from './components/Topbar'
-import Menu from './Menu'
-import Footer from './Footer'
-import DishesData  from "./DishesData"
-import React, { useState } from "react";
-
+import Body from "./body";
+import ConfirmOrder from './Confirm-order'
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 export default function App() {
-    let dishes = DishesData();
-    let [rowCheck, setRowCheck] = useState([false, false, false]);
-    let [selectedDishes, setSelectedDishes] = useState([])
-    let [selectedDishesQty, setSelectedDishesQty] = useState([])
-    let [selectedDishesPrice, setSelectedDishesPrice] = useState([])
-    let [selectedDishesType, setSelectedDishesType] = useState([])
     return (
-        <>
-            <Topbar />
-            <Menu 
-                dishesData={dishes}
-                rowCheck={rowCheck}
-                setRowCheck={setRowCheck}
-                selectedDishes={selectedDishes}
-                setSelectedDishes={setSelectedDishes}
-                selectedDishesQty={selectedDishesQty}
-                setSelectedDishesQty={setSelectedDishesQty}
-                selectedDishesPrice={selectedDishesPrice}
-                setSelectedDishesPrice={setSelectedDishesPrice}
-                selectedDishesType={selectedDishesType}
-                setSelectedDishesType={setSelectedDishesType}
-            />
-            <Footer 
-                rowCheck={rowCheck}
-                selectedDishes={selectedDishes}
-                selectedDishesQty={selectedDishesQty}
-                selectedDishesPrice={selectedDishesPrice}
-                selectedDishesType={selectedDishesType}
-            />
-        </>
+        <Router>
+            <Switch>
+                <Route path='/' exact component={Body} />
+                <Route path='/revisar' component={ConfirmOrder} />
+            </Switch>
+        </Router>
     )
 }

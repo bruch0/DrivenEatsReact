@@ -114,7 +114,7 @@ function ConfirmFood(props) {
                 {props.foodTitle} {props.foodQty}
             </div>
             <div>
-                {props.foodPrice}
+                {`R$ ${props.foodPrice}`}
             </div>
         </div>
     )

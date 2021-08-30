@@ -53,15 +53,14 @@ export default function Dish(props) {
             }
         }))
         setSelectedDishesType(selectedDishesType);
-        setSelectedDishesQty(selectedDishesType);
-        setSelectedDishesPrice(selectedDishesType);
+        setSelectedDishesQty(selectedDishesQty);
+        setSelectedDishesPrice(selectedDishesPrice);
     }
 
     function checkRow(value ,key) {
         let newCheck = [...rowCheck];
         if (value === false) {
             if (selectedDishesType.indexOf(dishClass) === -1) {
-                let newCheck = [...rowCheck];
                 newCheck[key] = value;
             }
         }
